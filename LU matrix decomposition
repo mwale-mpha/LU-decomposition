@@ -1,0 +1,16 @@
+X <- matrix( c ( 1, 2, 2, 1 ), nrow=2, byrow = TRUE)#Assuming a matrix X with 2 by 2 dimension
+
+install.packages('matrixcalc')#installing necessary packages
+
+library('matrixcalc')#loading the necessary packages
+
+luX<-lu.decomposition(X)#Decomposing the matrix
+
+L<-luX$L#labelling the upper and lower triangular matrix
+U<-luX$U
+
+print(L)#Showing the seperate L and U matrices
+print(U)
+
+print(X)
+print(L%*%U)#Proving that L and U are a decomposition of matrix (x).The matrices are the same hence showing that L and U are indeed a decomposition of matrix X
